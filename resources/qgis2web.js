@@ -520,6 +520,12 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 
 
 //layerswitcher
+var layerSwitcher = new ol.control.LayerSwitcher({
+    tipLabel: 'Legend',
+    target: topRightContainerDiv,
+    startActive: true
+});
+map.addControl(layerSwitcher);
 
 
 
