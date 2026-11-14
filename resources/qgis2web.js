@@ -115,8 +115,8 @@ window.addEventListener('load', function() {
     readmeLink.rel = 'noopener noreferrer';
     readmeLink.innerHTML = '📖 About this map (README)';
     readmeLink.style.cssText =
-        'position:fixed; top:80px; right:20px; z-index:99999; ' +
-        'background:#ffffff; color:#1a5276; padding:10px 16px; ' +
+    'position:fixed; bottom:60px; right:20px; z-index:99999; ' +
+		'background:#ffffff; color:#1a5276; padding:10px 16px; ' +
         'border:2px solid #1a5276; border-radius:4px; ' +
         'font-size:14px; font-family:Arial, sans-serif; ' +
         'text-decoration:none; font-weight:bold; cursor:pointer; ' +
