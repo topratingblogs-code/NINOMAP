@@ -108,27 +108,29 @@ var overlayPopup = new ol.Overlay({
 });
 map.addOverlay(overlayPopup)
 // Add a clickable link to the README on the map
-var readmeLink = document.createElement('a');
-readmeLink.href = 'https://github.com/topratingblogs-code/NINOMAP/blob/main/README.md';
-readmeLink.target = '_blank';
-readmeLink.rel = 'noopener noreferrer';
-readmeLink.innerHTML = '📖 About this map (README)';
-readmeLink.style.cssText =
-    'position:absolute; top:20px; right:20px; z-index:1000; ' +
-    'background:#ffffff; color:#1a5276; padding:8px 14px; ' +
-    'border:1px solid #1a5276; border-radius:4px; ' +
-    'font-size:13px; font-family:Arial, sans-serif; ' +
-    'text-decoration:none; font-weight:bold; ' +
-    'box-shadow:0 2px 4px rgba(0,0,0,0.2);';
-readmeLink.onmouseover = function() {
-    readmeLink.style.background = '#1a5276';
-    readmeLink.style.color = '#ffffff';
-};
-readmeLink.onmouseout = function() {
-    readmeLink.style.background = '#ffffff';
-    readmeLink.style.color = '#1a5276';
-};
-document.getElementById('map').appendChild(readmeLink);
+window.addEventListener('load', function() {
+    var readmeLink = document.createElement('a');
+    readmeLink.href = 'https://github.com/topratingblogs-code/NINOMAP/blob/main/README.md';
+    readmeLink.target = '_blank';
+    readmeLink.rel = 'noopener noreferrer';
+    readmeLink.innerHTML = '📖 About this map (README)';
+    readmeLink.style.cssText =
+        'position:fixed; top:80px; right:20px; z-index:99999; ' +
+        'background:#ffffff; color:#1a5276; padding:10px 16px; ' +
+        'border:2px solid #1a5276; border-radius:4px; ' +
+        'font-size:14px; font-family:Arial, sans-serif; ' +
+        'text-decoration:none; font-weight:bold; cursor:pointer; ' +
+        'box-shadow:0 3px 6px rgba(0,0,0,0.3); display:inline-block;';
+    readmeLink.onmouseover = function() {
+        readmeLink.style.background = '#1a5276';
+        readmeLink.style.color = '#ffffff';
+    };
+    readmeLink.onmouseout = function() {
+        readmeLink.style.background = '#ffffff';
+        readmeLink.style.color = '#1a5276';
+    };
+    document.body.appendChild(readmeLink);
+});
     
     
 var NO_POPUP = 0
