@@ -107,6 +107,28 @@ var overlayPopup = new ol.Overlay({
 	autoPan: true
 });
 map.addOverlay(overlayPopup)
+// Add a clickable link to the README on the map
+var readmeLink = document.createElement('a');
+readmeLink.href = 'https://github.com/topratingblogs-code/NINOMAP/blob/main/README.md';
+readmeLink.target = '_blank';
+readmeLink.rel = 'noopener noreferrer';
+readmeLink.innerHTML = '📖 About this map (README)';
+readmeLink.style.cssText =
+    'position:absolute; top:20px; right:20px; z-index:1000; ' +
+    'background:#ffffff; color:#1a5276; padding:8px 14px; ' +
+    'border:1px solid #1a5276; border-radius:4px; ' +
+    'font-size:13px; font-family:Arial, sans-serif; ' +
+    'text-decoration:none; font-weight:bold; ' +
+    'box-shadow:0 2px 4px rgba(0,0,0,0.2);';
+readmeLink.onmouseover = function() {
+    readmeLink.style.background = '#1a5276';
+    readmeLink.style.color = '#ffffff';
+};
+readmeLink.onmouseout = function() {
+    readmeLink.style.background = '#ffffff';
+    readmeLink.style.color = '#1a5276';
+};
+document.getElementById('map').appendChild(readmeLink);
     
     
 var NO_POPUP = 0
